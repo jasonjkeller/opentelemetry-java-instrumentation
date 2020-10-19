@@ -34,7 +34,8 @@ ext {
     nullaway            : "0.8.0",
     autoValue           : "1.7.4",
     systemLambda        : "1.1.0",
-    prometheus          : "0.9.0"
+    prometheus          : "0.9.0",
+    newrelic            : "0.9.0"
   ]
 
   deps = [
@@ -50,6 +51,7 @@ ext {
     opentelemetryPrometheus     : dependencies.create(group: 'io.opentelemetry', name: 'opentelemetry-exporters-prometheus', version: versions.opentelemetry),
     opentelemetryLogging        : dependencies.create(group: 'io.opentelemetry', name: 'opentelemetry-exporters-logging', version: versions.opentelemetry),
     opentelemetryProto          : dependencies.create(group: 'io.opentelemetry', name: 'opentelemetry-proto', version: versions.opentelemetry),
+    opentelemetryNewRelic       : dependencies.create(group: 'com.newrelic.telemetry', name: 'opentelemetry-exporters-newrelic-auto', version: versions.newrelic),
 
     // General
     slf4j                       : "org.slf4j:slf4j-api:${versions.slf4j}",

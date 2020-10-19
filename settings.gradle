@@ -196,6 +196,7 @@ include ":javaagent-exporters:logging"
 include ":javaagent-exporters:otlp"
 include ":javaagent-exporters:zipkin"
 include ":javaagent-exporters:prometheus"
+include ":javaagent-exporters:newrelic"
 
 // benchmark
 include ':benchmark'

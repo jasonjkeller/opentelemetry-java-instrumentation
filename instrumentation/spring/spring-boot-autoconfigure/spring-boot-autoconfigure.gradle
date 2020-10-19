@@ -23,6 +23,7 @@ dependencies {
   compileOnly deps.opentelemetryJaeger
   compileOnly deps.opentelemetryOtlp
   compileOnly deps.opentelemetryZipkin
+//  compileOnly deps.opentelemetryNewRelic
 
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: versions.springboot
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: versions.springboot
@@ -39,4 +40,5 @@ dependencies {
   testImplementation deps.opentelemetryJaeger
   testImplementation deps.opentelemetryOtlp
   testImplementation deps.opentelemetryZipkin
+//  testImplementation deps.opentelemetryNewRelic
 }
