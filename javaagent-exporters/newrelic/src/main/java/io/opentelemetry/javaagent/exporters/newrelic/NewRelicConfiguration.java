@@ -8,7 +8,6 @@ package io.opentelemetry.javaagent.exporters.newrelic;
 import java.util.Properties;
 
 class NewRelicConfiguration {
-  // TODO use OTel naming convention prefixes: otel. and OTEL_
   static final String DEFAULT_NEW_RELIC_SERVICE_NAME = "(unknown service)";
 
   // System properties
