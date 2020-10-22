@@ -56,14 +56,14 @@ public class PlayTracer extends BaseTracer {
       }
       if (defOption != null && !defOption.isEmpty()) {
         String path = defOption.get().path();
-        span.updateName(request.method() + " " + path);
+        span.updateName(path);
       }
     }
   }
 
   @Override
   protected String getInstrumentationName() {
-    return "io.opentelemetry.auto.play-2.6";
+    return "io.opentelemetry.auto.play";
   }
 
   @Override

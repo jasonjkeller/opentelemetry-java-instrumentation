@@ -20,14 +20,14 @@ public class PlayTracer extends BaseTracer {
       Option<String> pathOption = request.tags().get("ROUTE_PATTERN");
       if (!pathOption.isEmpty()) {
         String path = pathOption.get();
-        span.updateName(request.method() + " " + path);
+        span.updateName(path);
       }
     }
   }
 
   @Override
   protected String getInstrumentationName() {
-    return "io.opentelemetry.auto.play-2.4";
+    return "io.opentelemetry.auto.play";
   }
 
   @Override
