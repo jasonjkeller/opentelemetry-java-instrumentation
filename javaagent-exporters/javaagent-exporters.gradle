@@ -17,6 +17,7 @@ dependencies {
   testImplementation project(':javaagent-exporters:logging')
   testImplementation project(':javaagent-exporters:zipkin')
   testImplementation project(':javaagent-exporters:prometheus')
+  testImplementation project(':javaagent-exporters:newrelic')
 }
 
 tasks.withType(Test).configureEach() {
@@ -25,6 +26,7 @@ tasks.withType(Test).configureEach() {
   dependsOn ':javaagent-exporters:logging:shadowJar'
   dependsOn ':javaagent-exporters:zipkin:shadowJar'
   dependsOn ':javaagent-exporters:prometheus:shadowJar'
+  dependsOn ':javaagent-exporters:newrelic:shadowJar'
   doFirst {
     systemProperty 'projectVersion', allprojects.version[0]
     systemProperty 'adapterRoot', "$rootDir/javaagent-exporters"
@@ -33,6 +35,7 @@ tasks.withType(Test).configureEach() {
     systemProperty 'loggingExporterJar', project(':javaagent-exporters:logging').tasks.shadowJar.archivePath
     systemProperty 'zipkinExporterJar', project(':javaagent-exporters:zipkin').tasks.shadowJar.archivePath
     systemProperty 'prometheusExporterJar', project(':javaagent-exporters:prometheus').tasks.shadowJar.archivePath
+    systemProperty 'newrelicExporterJar', project(':javaagent-exporters:newrelic').tasks.shadowJar.archivePath
   }
 }
 
@@ -46,6 +49,7 @@ dependencies {
   shadowInclude project(path: ':javaagent-exporters:jaeger', configuration: 'shadow')
   shadowInclude project(path: ':javaagent-exporters:zipkin', configuration: 'shadow')
   shadowInclude project(path: ':javaagent-exporters:prometheus', configuration: 'shadow')
+  shadowInclude project(path: ':javaagent-exporters:newrelic', configuration: 'shadow')
 }
 
 jar.enabled = false

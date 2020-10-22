@@ -147,6 +147,20 @@ attributes to stdout. It is used mainly for testing and debugging.
 | otel.exporter=logging        | OTEL_EXPORTER=logging        | To select logging exporter                                                   |
 | otel.exporter.logging.prefix | OTEL_EXPORTER_LOGGING_PREFIX | An optional string that is printed in front of the span name and attributes. |
 
+##### New Relic exporter
+
+A simple wrapper for the New Relic [opentelemetry-exporter-java](https://github.com/newrelic/opentelemetry-exporter-java). 
+It sends spans and metrics to New Relic using the New Relic Java Telemetry SDK.
+
+| System property                    | Environment variable                | Purpose                                                                         |
+|------------------------------------|-------------------------------------|---------------------------------------------------------------------------------|
+| otel.exporter=newrelic             | OTEL_EXPORTER=newrelic              | To select New Relic exporter                                                    |
+| otel.newrelic.api.key              | OTEL_NEW_RELIC_API_KEY              | The Insights insert key to report telemetry data to New Relic                   |
+| otel.newrelic.service.name         | OTEL_NEW_RELIC_SERVICE_NAME         | The service name of this JVM instance, default is "(unknown service)".          |
+| otel.newrelic.trace.uri.override   | OTEL_NEW_RELIC_TRACE_URI_OVERRIDE   | The New Relic endpoint to connect to for reporting Spans, default is US Prod.   |
+| otel.newrelic.metric.uri.override  | OTEL_NEW_RELIC_METRIC_URI_OVERRIDE  | The New Relic endpoint to connect to for reporting metrics, default is US Prod. |
+| otel.newrelic.enable.audit.logging | OTEL_NEW_RELIC_ENABLE_AUDIT_LOGGING | Enable verbose audit logging                                                    |
+
 #### Propagator
 
 The propagator controls which distributed tracing header format is used.
